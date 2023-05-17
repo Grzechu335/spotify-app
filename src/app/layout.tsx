@@ -1,7 +1,7 @@
-import Sidebar from '../components/organisms/Sidebar'
-import Providers from '../../providers/providers'
-import './globals.css'
 import { Inter } from 'next/font/google'
+import './globals.css'
+import Providers from '../../providers/providers'
+import Sidebar from '@/components/organisms/Sidebar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,12 +17,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body
-                className={`flex w-screen h-screen ${inter.className} overflow-hidden`}
-            >
+            <body className={`${inter.className}`}>
                 <Providers>
-                    <Sidebar />
-                    <div className="flex-grow">{children}</div>
+                    <div>{children}</div>
                 </Providers>
             </body>
         </html>

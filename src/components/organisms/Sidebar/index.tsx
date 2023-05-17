@@ -8,13 +8,14 @@ const Sidebar: React.FC = () => {
         useSpotifyContext()
     return (
         <aside className="w-[20vw] p-4 border-r border-r-gray-700">
-            <ul className="flex flex-col space-y-4">
+            <ul className="flex flex-col space-y-4 pb-[120px]">
                 {playlists?.map((playlist) => (
                     <li
                         className={clsx(
                             'h-6 truncate text-slate-500 hover:text-slate-300',
                             {
-                                '': playlist.id === selectedPlaylist?.id,
+                                'text-white':
+                                    playlist.id === selectedPlaylist?.id,
                             }
                         )}
                         key={playlist.id}
